@@ -1,0 +1,53 @@
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 0px 25px 25px 0px;
+    background-color: #fff;
+    box-shadow: #363636 3px 3px 5px;
+    margin: 50px 25px;
+}
+
+.brand-name {
+    font-family: 'Maven Pro', sans-serif;
+    text-decoration: none;
+    color: #363636;
+}
+
+.user-login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'poppins', sans-serif;
+    text-decoration: none;
+    color: #363636;
+    margin-bottom: 50px;
+    text-align: center;
+    background-color: rgba(145, 158, 171, 0.12);
+    border-radius: 0px 10px;
+    padding: 15px 0px;
+}
+
+.icon-user {
+    font-size: 30px;
+}
+
+.icon-link {
+    font-size: 30px;
+}
+
+.link {
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}

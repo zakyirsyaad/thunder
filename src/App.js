@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import SignIn from './login/signin';
+import { useState } from 'react';
+import SignUp from './login/signup';
+import { Route, Routes } from 'react-router-dom'
+import Dashboard from './page/dashboard';
+import Layout from './component/layoutnavbar';
 
 function App() {
+  const [currentForm, setCurrentForm] = useState('login')
+
+  const toggleForm = (formName) => {
+    setCurrentForm(formName)
+  }
+
+  const isLoggedIn = localStorage.getItem("token") === null ? false : true
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+      <Routes>
+        <Route exact path='/'
+          element={
+            currentForm === "login" ? <SignIn onFormSwitch={toggleForm} /> : <SignUp onFormSwitch={toggleForm} />
+          }
+        />
+        <Route path='/dashboard' element={<Dashboard />} />
+      </Routes >
+    </div >
   );
 }
 
